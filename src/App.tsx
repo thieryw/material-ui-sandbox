@@ -1,26 +1,61 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import {Button, Typography} from "@material-ui/core";
+//import {styledTyped} from "./util/styledTyped";
+import {ThemeProvider, makeStyles} from "@material-ui/core/styles";
+import {theme} from "./theme";
 
-function App() {
+
+const useStyles = makeStyles({
+  titleStyle: {
+    color: "blue",
+    fontSize: "3em",
+    fontStyle: "italic"
+  },
+  personalButtonStyle: {
+    color: "purple",
+    fontStyle: "oblique",
+    border: "solid red 2px",
+    backgroundColor: "black"
+    
+    
+
+  }
+})
+
+
+export const App: React.FunctionComponent = ()=>{
+
+  const classes = useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <Typography color="secondary" className={classes.titleStyle} variant="h1">Material UI Sandbox</Typography>
+
+        <div className="buttons-1">
+          <Button>Default</Button>
+          <Button variant="contained" color="primary">Primary</Button>
+          <Button variant="contained" color="secondary">Secondary</Button>
+          <Button variant="outlined" color="primary">primary outlined</Button>
+          <Button variant="outlined" color="secondary">secondary outlined</Button>
+        </div>
+
+        <div className="buttons-2">
+          <Button fullWidth variant="contained" color="primary">full width</Button>
+          <Button fullWidth variant="contained" color="secondary">full width</Button>
+        </div>
+
+        <div className="button-3">
+          <Button className={classes.personalButtonStyle}>Presonal Button</Button>
+        </div>
+
+
+
+
+      </div>
+    </ThemeProvider>
+    
+  )
 }
 
-export default App;
+
