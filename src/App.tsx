@@ -5,6 +5,7 @@ import {Button, Typography} from "@material-ui/core";
 import {ThemeProvider, makeStyles} from "@material-ui/core/styles";
 import {theme, theme2} from "./theme";
 import {ExampleWithAnimation} from "./components/ExampleWithAnimation";
+import {MyButton} from "./components/myButton";
 
 const useStyles = makeStyles({
   titleStyle: {
@@ -165,6 +166,11 @@ export const App: React.FunctionComponent = ()=>{
 
         <ExampleWithAnimation />
 
+
+        <MyButton backgroundColor="red" border="solid black 1px" />
+
+
+        <MyButton disabled backgroundColor="purple" border="solid red 2px" />
 
 
 
