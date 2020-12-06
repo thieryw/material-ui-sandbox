@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, makeStyles, Theme, useTheme, withStyles} from "@material-ui/core";
+import {Button, makeStyles, Theme} from "@material-ui/core";
 
 
 
@@ -43,11 +43,6 @@ export const MyButton: React.FunctionComponent<Props & {disabled?: boolean}> = p
         <Button disabled={props.disabled} className={classes.buttonStyle} variant="contained" color="primary">My Button</Button>
 
     )
-
-
-
-
-
 }
 
 
