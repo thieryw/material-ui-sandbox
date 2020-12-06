@@ -40,7 +40,12 @@ export const MyButton: React.FunctionComponent<Props & {disabled?: boolean}> = p
 
     return(
 
-        <Button disabled={props.disabled} className={classes.buttonStyle} variant="contained" color="primary">My Button</Button>
+        <Button 
+            disabled={props.disabled} 
+            className={classes.buttonStyle} 
+            variant="contained" 
+            color="primary">My Button
+        </Button>
 
     )
 }
