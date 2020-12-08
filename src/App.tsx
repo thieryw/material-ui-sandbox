@@ -6,6 +6,7 @@ import {ThemeProvider, makeStyles} from "@material-ui/core/styles";
 import {theme, theme2} from "./theme";
 import {ExampleWithAnimation} from "./components/ExampleWithAnimation";
 import {MyButton} from "./components/myButton";
+import {MyButton2} from "./components/myButton2";
 
 const useStyles = makeStyles({
   titleStyle: {
@@ -171,6 +172,23 @@ export const App: React.FunctionComponent = ()=>{
 
 
         <MyButton disabled backgroundColor="purple" border="solid red 2px" />
+
+        {/* Button with default Props */}
+
+        <MyButton2
+          onClick={()=> alert("some sort of action")}
+        />
+
+        {/* Button with default props overridden */}
+
+        <MyButton2
+          onClick={()=> alert("some sort of action")} 
+          backgroundColor="purple"
+          border="solid black 1px"
+
+        />
+
+
 
 
 
